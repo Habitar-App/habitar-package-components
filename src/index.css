@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: "cv01", "cv02", "cv03", "cv04", "cv05", "cv06",
+      "cv07", "cv08", "cv09", "cv10", "cv11";
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 262.8 100% 50%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262.8 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 220 13% 18%;
+      --foreground: 210 20% 98%;
+      --card: 221 39% 11%;
+      --card-foreground: 210 20% 98%;
+      --popover: 221 39% 11%;
+      --popover-foreground: 210 20% 98%;
+      --primary: 262.8 100% 40%;
+      --primary-foreground: 210 20% 98%;
+      --secondary: 215 27.9% 24%;
+      --secondary-foreground: 210 20% 98%;
+      --muted: 215 27.9% 24%;
+      --muted-foreground: 217.9 10.6% 64.9%;
+      --accent: 215 27.9% 24%;
+      --accent-foreground: 210 20% 98%;
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 20% 98%;
+      --border: 215 27.9% 24%;
+      --input: 215 27.9% 24%;
+      --ring: 262.8 100% 40%;
+    }
+  }
+}
+
+@layer utilities {
+  .snap {
+    scroll-snap-type: y mandatory !important;
+  }
+  .snap-y {
+    --scroll-snap-direction: y;
+  }
+  .snap-mandatory {
+    --scroll-snap-constraint: mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  .popover-content-width-same-as-its-trigger {
+    width: var(--radix-popover-trigger-width) !important;
+    max-height: var(--radix-popover-content-available-height) !important;
+  }
+}
